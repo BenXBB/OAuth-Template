@@ -11,7 +11,7 @@ const authCheck = (req, res, next) => { //function middleware that redirects use
 }
 
 router.get('/', authCheck, (req, res) => {
-    res.send("you are logged in, this is your profile - " + req.user.username)
+    res.render('profile', { user: req.user }); //passing the user from the mongo database
 });
 
 module.exports = router;

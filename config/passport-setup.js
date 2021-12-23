@@ -30,7 +30,8 @@ passport.use(
                 // if not, create user in database
                 new User({
                     username: profile.displayName,
-                    googleId: profile.id
+                    googleId: profile.id,
+                    thumbnail: profile._json.picture
                 }).save().then((newUser) => { // save is a mongoose async function used to save the user details from google
                     console.log("new user created: " + newUser);
                     done(null, newUser);

@@ -29,5 +29,5 @@ in using the google OAuth page handler assisted using "Passport.Authenticate".
 
 5. User is now classed as logged into the site and can access pages that were restricted without a login.
 
-6. A cookie is sent to the browser with the stored info with the users session on the site.
+6. A cookie is sent to the browser with the stored info with the users session on the site and the user has access to their 'dashboard'.
 

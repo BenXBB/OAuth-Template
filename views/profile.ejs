@@ -35,29 +35,33 @@
                 padding: 0 10px;
                 color: #333;
             }
+            .infoProfile {
+                text-align: center;
+            }
         </style>
     </head>
     <body>
 
         <nav>
             <ul>
-                <% if (user) { %>
-                <li><a href="/auth/logout">Logout</a></li>
-                <% } else { %>
-                <li><a href="/auth/login">Login</a></li>
-                <% } %>
+                    <% if (user) { %>
+                    <li><a href="/auth/logout">Logout</a></li>
+                    <% } else { %>
+                    <li><a href="/auth/login">Login</a></li>
+                    <% } %>
                 <li><a href="/">Homepage</a></li>
-                <li><a href="/profile">Profile</a></li>
             </ul>
         </nav>
 
         <header>
-            <h1>OAuth test</h1>
-            <h2>Homepage</h2>
+            <h1>Welcome to your profile, <%= user.username %></h1>
         </header>
-
         <main>
-            <p>Testing OAuth, the best login security</p>
+            <div class="infoProfile">
+                <img src= "<%= user.thumbnail %>" />
+                <h4>Extra information about you..</h4>
+                Google id: <%= user.googleId %>
+            </div>
         </main>
 
     </body>
