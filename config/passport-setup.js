@@ -1,11 +1,14 @@
-const passport = require("passport");
-const GoogleStrategy = require("passport-google-oauth20");
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const keys = require('./keys');
 
 passport.use(
     new GoogleStrategy({
-    // options for the google strat
-
-    }), () => {
-        // passport callback function
-    }
+        // options for google strategy
+        clientID: keys.google.clientID,
+        clientSecret: keys.google.clientSecret,
+        callbackURL: '/auth/google/redirect'
+    }, () => {
+        // passport callback function after getting google account details
+    })
 );
